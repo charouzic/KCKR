@@ -9,5 +9,16 @@ const Resolvers = {
       return users.find((user) => user.id === args.id);
     },
   },
+  Mutation: {
+    addUser: (_: any, args: any) => {
+      const newUser = {
+        id: users.length + 1,
+        email: args.email,
+        username: args.username,
+      };
+      users.push(newUser);
+      return newUser;
+    },
+  },
 };
 export default Resolvers;
