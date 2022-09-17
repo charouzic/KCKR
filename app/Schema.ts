@@ -1,9 +1,10 @@
 import { gql } from "apollo-server-express"; //will create a schema
 const Schema = gql`
   type User {
-    id: ID!
+    id: Int!
     email: String
     username: String
+    avatar: String
   }
   #handle user commands
   type Query {

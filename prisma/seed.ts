@@ -2,7 +2,7 @@ import { PrismaClient, Prisma } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-async function main() {
+async function load() {
     console.log(`Start seeding ...`)
     const user1 = await prisma.user.create({
       data: {
@@ -52,3 +52,4 @@ async function main() {
       })
     console.log(`Created user with id: ${user2.id}`)
   }
+load();
