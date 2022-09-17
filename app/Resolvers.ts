@@ -25,16 +25,13 @@ const Resolvers = {
   },
   Mutation: {
     addUser: (_: any, args: any) => {
-      const newUser = {
-        email: args.email,
-        username: args.username,
-      };
-      prisma.user.create({
+      const newUser = prisma.user.create({
            data: {
-             email: newUser.email,
-             userName: newUser.username
+             email: args.email,
+             userName: args.username
            }
          });
+        
       return newUser;
     },
   },
